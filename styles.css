@@ -1,0 +1,1134 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  color-scheme: light;
+  --ink: #172b2b;
+  --muted: #64716c;
+  --paper: #f7f6f0;
+  --cream: #efece1;
+  --green: #214e43;
+  --lime: #d7ed76;
+  --orange: #e78351;
+  --line: rgba(23, 43, 43, 0.15);
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link,
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  z-index: 20;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.8rem 1rem;
+  margin: 0;
+  clip: auto;
+  color: var(--ink);
+  background: white;
+}
+
+.site-header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  min-height: 84px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7.2%;
+  background: var(--paper);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+}
+
+.brand-name,
+.brand-name span {
+  display: block;
+}
+
+.brand-name strong {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.brand-name span {
+  margin-top: 0.22rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 3vw, 2.8rem);
+}
+
+.site-nav a,
+.text-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.site-nav a:not(.nav-cta):hover,
+.text-link:hover {
+  color: var(--green);
+}
+
+.site-nav .nav-cta {
+  padding: 0.75rem 1.15rem;
+  border: 1px solid var(--ink);
+  border-radius: 2rem;
+  transition: color 160ms ease, background 160ms ease;
+}
+
+.site-nav .nav-cta:hover {
+  color: white;
+  background: var(--ink);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  min-height: min(690px, calc(100svh - 84px));
+  align-items: center;
+  overflow: hidden;
+  padding: 6rem 7.2%;
+  color: white;
+  background: #193b37;
+}
+
+.hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(16, 39, 38, 0.97) 0%, rgba(16, 39, 38, 0.82) 43%, rgba(16, 39, 38, 0.2) 100%);
+  content: "";
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0 0 0 38%;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 60% 83%, rgba(232, 131, 81, 0.68), transparent 32%),
+    linear-gradient(155deg, #647964 0%, #c29462 50%, #df996c 100%);
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sun {
+  position: absolute;
+  top: 15%;
+  right: 24%;
+  width: clamp(120px, 17vw, 240px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #f2d189;
+  box-shadow: 0 0 90px rgba(242, 209, 137, 0.3);
+}
+
+.hill {
+  position: absolute;
+  right: -10%;
+  bottom: -34%;
+  left: -5%;
+  height: 70%;
+  border-radius: 50% 50% 0 0;
+  transform: rotate(-8deg);
+}
+
+.hill-back {
+  bottom: -26%;
+  left: 22%;
+  background: #596c54;
+  transform: rotate(12deg);
+}
+
+.hill-front {
+  background: linear-gradient(150deg, #27473b, #1d3835 74%);
+}
+
+.hero-stamp {
+  position: absolute;
+  right: 13%;
+  bottom: 17%;
+  z-index: 1;
+  display: grid;
+  width: 106px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  transform: rotate(9deg);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(670px, 65%);
+}
+
+.eyebrow,
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.eyebrow span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--lime);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  letter-spacing: -0.065em;
+}
+
+.hero h1 {
+  margin: 1.5rem 0 1.1rem;
+  font-size: clamp(3rem, 6.7vw, 6.5rem);
+  font-weight: 600;
+  line-height: 0.99;
+}
+
+.hero h1 em,
+.intro h2 em,
+.contact h2 em {
+  color: var(--lime);
+  font-style: normal;
+}
+
+.hero-description {
+  max-width: 430px;
+  margin-bottom: 1.8rem;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 3rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: var(--ink);
+  background: var(--lime);
+}
+
+.button-primary:hover {
+  background: #e4f69c;
+}
+
+.text-link {
+  color: white;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 3.5rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.65rem;
+  line-height: 1.45;
+}
+
+.note-number {
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.07em;
+}
+
+.hero-caption {
+  position: absolute;
+  right: 7.2%;
+  bottom: 2.2rem;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-wrap {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.intro {
+  padding-top: 7rem;
+  padding-bottom: 7.3rem;
+}
+
+.section-kicker {
+  color: var(--muted);
+}
+
+.section-kicker span {
+  color: var(--orange);
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr;
+  gap: 10%;
+  align-items: end;
+  margin-top: 2rem;
+}
+
+.intro h2,
+.section-heading h2,
+.enrollment h2,
+.contact h2 {
+  margin-bottom: 0;
+  font-size: clamp(2.5rem, 4.7vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1.04;
+}
+
+.intro h2 em,
+.contact h2 em {
+  color: var(--green);
+}
+
+.intro-text {
+  max-width: 430px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.courses {
+  padding-top: 5.5rem;
+  padding-bottom: 6rem;
+  background: var(--cream);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-heading h2 {
+  margin-top: 1.2rem;
+  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+}
+
+.section-heading > p {
+  max-width: 260px;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.course-card,
+.course-more {
+  position: relative;
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.4rem;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.course-card {
+  color: var(--ink);
+  background: #dce5d2;
+}
+
+.course-programming {
+  background: #dce5d2;
+}
+
+.course-cooking {
+  background: #f0d7c2;
+}
+
+.course-sewing {
+  background: #e6d9e7;
+}
+
+.course-electric {
+  background: #e4e0c3;
+}
+
+.course-welding {
+  background: #d4dfdd;
+}
+
+.course-index {
+  color: rgba(23, 43, 43, 0.65);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.course-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-top: 1.25rem;
+  place-items: center;
+  border: 1px solid rgba(23, 43, 43, 0.26);
+  border-radius: 50%;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.course-card h3 {
+  margin: 1.1rem 0 0.35rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: -0.04em;
+}
+
+.course-card p {
+  max-width: 245px;
+  margin-bottom: 0;
+  color: rgba(23, 43, 43, 0.73);
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.course-arrow {
+  position: absolute;
+  right: 1.15rem;
+  bottom: 1.1rem;
+  font-size: 1rem;
+}
+
+.course-more {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.9rem;
+  color: white;
+  background: var(--green);
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+
+.course-more:hover {
+  background: #173c34;
+}
+
+.more-plus {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.course-more strong,
+.course-more small {
+  display: block;
+}
+
+.course-more strong {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+}
+
+.course-more small {
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.69);
+  font-size: 0.68rem;
+}
+
+.course-disclaimer {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.enrollment {
+  padding: 5.5rem 10%;
+  color: white;
+  background: var(--green);
+}
+
+.enrollment .section-kicker {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.enrollment .section-kicker span {
+  color: var(--lime);
+}
+
+.enrollment-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 10%;
+  align-items: center;
+}
+
+.enrollment-inner > .section-kicker {
+  align-self: start;
+}
+
+.enrollment-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.enrollment h2 {
+  margin: 1.3rem 0 1rem;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+.enrollment-copy p {
+  max-width: 440px;
+  margin-bottom: 1.7rem;
+  color: rgba(255, 255, 255, 0.73);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.enrollment-docs-intro {
+  margin: 1.6rem 0 0.7rem;
+  font-size: 0.76rem;
+}
+
+.enrollment-docs {
+  max-width: 490px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.document-number {
+  color: var(--lime);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.document-item strong,
+.document-item small {
+  display: block;
+}
+
+.document-item strong {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+}
+
+.document-item small {
+  margin-top: 0.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.68rem;
+}
+
+.enrollment-copy .documents-note {
+  max-width: 440px;
+  margin: 0.8rem 0 1.2rem;
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.button-light {
+  color: var(--ink);
+  background: white;
+}
+
+.button-light:hover {
+  background: var(--lime);
+}
+
+.enrollment-aside {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  display: flex;
+  align-items: center;
+  transform: translateY(-50%);
+}
+
+.aside-circle {
+  display: grid;
+  width: clamp(145px, 20vw, 230px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(215, 237, 118, 0.75);
+  border-radius: 50%;
+  color: var(--lime);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  text-align: center;
+  transform: rotate(-9deg);
+}
+
+.aside-line {
+  width: 7vw;
+  border-top: 1px solid rgba(215, 237, 118, 0.55);
+  transform: rotate(-34deg);
+}
+
+.contact {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 10%;
+  align-items: end;
+  margin-top: 2rem;
+}
+
+.contact h2 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+}
+
+.contact-content > div:first-child > p {
+  max-width: 380px;
+  margin: 1.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.contact-card {
+  position: relative;
+  display: flex;
+  min-height: 225px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.8rem;
+  border: 1px solid var(--line);
+}
+
+.contact-pin {
+  position: absolute;
+  top: 1.35rem;
+  right: 1.4rem;
+  color: var(--orange);
+  font-size: 1.5rem;
+}
+
+.contact-label,
+.contact-country,
+.contact-phone-label {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.contact-card strong {
+  margin-top: 0.55rem;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: -0.04em;
+}
+
+.contact-phone-label {
+  margin-top: 0.8rem;
+}
+
+.contact-phone {
+  margin-top: 0.25rem;
+  color: var(--green);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.map-link {
+  display: inline-flex;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+  color: var(--green);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto auto;
+  gap: 1rem 2rem;
+  align-items: center;
+  padding: 1.8rem 7.2%;
+  border-top: 1px solid var(--line);
+}
+
+.footer-brand {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.footer-brand span,
+.site-footer p,
+.copyright {
+  color: var(--muted);
+  font-size: 0.66rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.back-top {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (min-width: 1500px) {
+  .site-header,
+  .site-footer {
+    padding-right: max(7.2%, calc((100% - 1280px) / 2));
+    padding-left: max(7.2%, calc((100% - 1280px) / 2));
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .hero {
+    min-height: 640px;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .section-wrap,
+  .enrollment {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+
+  .course-card,
+  .course-more {
+    min-height: 235px;
+    padding: 1.1rem;
+  }
+
+  .enrollment-aside {
+    left: 2%;
+  }
+
+  .site-footer {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header {
+    min-height: 72px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-name strong {
+    font-size: 0.71rem;
+  }
+
+  .brand-name span {
+    font-size: 0.59rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  .menu-toggle > span:not(.sr-only) {
+    width: 16px;
+    border-top: 1.5px solid var(--ink);
+  }
+
+  .site-nav {
+    position: absolute;
+    top: calc(100% - 1px);
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.5rem 5% 1.2rem;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-nav a {
+    padding: 0.9rem 0;
+  }
+
+  .site-nav .nav-cta {
+    align-self: flex-start;
+    padding: 0.7rem 1rem;
+    margin-top: 0.35rem;
+  }
+
+  .hero {
+    min-height: 690px;
+    align-items: flex-start;
+    padding-top: 5.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-art {
+    inset: 20% 0 0 0;
+  }
+
+  .hero::after {
+    background: linear-gradient(180deg, rgba(16, 39, 38, 0.97) 0%, rgba(16, 39, 38, 0.88) 45%, rgba(16, 39, 38, 0.25) 100%);
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 13vw, 5rem);
+  }
+
+  .hero-description {
+    max-width: 360px;
+    font-size: 0.88rem;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-note {
+    margin-top: 2.2rem;
+  }
+
+  .hero-caption {
+    right: 5%;
+    bottom: 1.5rem;
+    font-size: 0.55rem;
+  }
+
+  .section-wrap {
+    padding-right: 7%;
+    padding-left: 7%;
+  }
+
+  .intro {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .intro-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .intro h2,
+  .contact h2 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .intro-text {
+    font-size: 0.84rem;
+  }
+
+  .courses {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .section-heading h2 {
+    font-size: 2.8rem;
+  }
+
+  .section-heading > p {
+    max-width: 330px;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .course-card,
+  .course-more {
+    min-height: 220px;
+    padding: 1rem;
+  }
+
+  .course-icon {
+    width: 40px;
+    height: 40px;
+    margin-top: 1rem;
+  }
+
+  .course-card h3 {
+    font-size: 0.98rem;
+  }
+
+  .course-card p {
+    font-size: 0.67rem;
+  }
+
+  .course-more {
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 0.6rem;
+  }
+
+  .more-plus {
+    width: 36px;
+    height: 36px;
+  }
+
+  .course-more strong {
+    font-size: 0.8rem;
+  }
+
+  .course-more small {
+    font-size: 0.62rem;
+  }
+
+  .course-disclaimer {
+    line-height: 1.5;
+  }
+
+  .enrollment {
+    padding: 4.5rem 7%;
+  }
+
+  .enrollment-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .enrollment-copy {
+    margin-top: 1.2rem;
+  }
+
+  .enrollment h2 {
+    font-size: 2.8rem;
+  }
+
+  .enrollment-aside {
+    position: relative;
+    top: auto;
+    left: auto;
+    align-self: flex-end;
+    margin-top: 2.2rem;
+    transform: none;
+  }
+
+  .aside-circle {
+    width: 135px;
+  }
+
+  .contact {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .contact-card {
+    min-height: 200px;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr auto;
+    padding: 1.5rem 7%;
+  }
+
+  .site-footer p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .back-top {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .copyright {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
